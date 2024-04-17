@@ -13,21 +13,20 @@
         class Employee {
             constructor() {
                 if (this.constructor == Employee) {
-                    throw new Error(" Object of Abstract Class cannot be created");
+                    throw new Error(" AAAAA Object of Abstract Class cannot be created");
                 }
             }
             display() {
                 throw new Error("Abstract Method has no implementation");
             }
         }
-
         // clasele abstracte sunt clase care au definite metodele fara implementare
         // si obliga clasele copil sa implementeze metodele din clasa parinte
         class Manager extends Employee {
-            display() {
-                //super.display();
-                console.log("I am a Manager");
-            }
+            // display() {
+            //     //super.display();
+            //     console.log("I am a Manager");
+            // }
         }
         //var emp = new Employee;
         var mang = new Manager();

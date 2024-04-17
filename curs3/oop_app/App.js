@@ -2,9 +2,7 @@ import { Product } from "./Product.js";
 import { UI } from "./UI.js";
 
 // DOM Events
-document
-  .getElementById("product-form")
-  .addEventListener("submit", function (e) {
+document.getElementById("product-form").addEventListener("submit", function (e) {
     // Override the default Form behaviour
     e.preventDefault();
 

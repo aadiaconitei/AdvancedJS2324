@@ -11,6 +11,8 @@
 <body>
   <script>
     class Sport {
+
+
       constructor(name, numOfPlayers) {
         this.name = name;
         this.numOfPlayers = numOfPlayers;
@@ -36,6 +38,7 @@
     const sport = new Sport('Tennis', 12);
     console.log(sport.numOfPlayers);
     console.log(sport.players());
+    console.log(sport.comment());
 
     // Encapsulation
     //  Class Football does not need to know how the comment() method  or the payers() method of the sport is implemented, but can still use any of those methods. The football class doesn't need to explicitly define that method unless we want to change it.
