@@ -17,7 +17,7 @@
             static topPage = {};
             constructor(name) {
                 this.name = name;
-                this._admin= 'administrator';
+                this._admin = 'administrator';
             }
             // public method 
             greet() {
@@ -28,21 +28,32 @@
                 this.#count++;
             }
 
+            set count(newValue) {
+                console.log('sunt in setter');
+                this.#count = newValue;
+            }
+            get count() {
+                console.log('sunt in getter');
+                return this.#count;
+            }
+
             // we need a public method to get the value of the private member
             getCount() {
                 return this.#count;
             }
-             //  protected atunci ii definim getter dar nu setam setter
-            get admin(){
+            //  protected atunci ii definim getter dar nu setam setter
+            get admin() {
                 return this._admin;
             }
-            info (){
+            info() {
                 console.log(`adminul acestui site are rol de ${this.admin}`);
             }
-            static getTopPage(){
+            static getTopPage() {
                 return Page.topPage;
             }
         }
+
+
 
         class Page extends Website {
             constructor(name, page) {
@@ -50,28 +61,32 @@
                 this.page = page;
             }
             static vizitPage(page) {
-                if (!(page in  Page.topPage)) {
+                if (!(page in Page.topPage)) {
                     Page.topPage[page] = 0;
                 }
                 Page.topPage[page]++;
-                
+
                 console.log(`The visited page is ${page}`);
             }
-            
-           
+
+
         }
         let obj = new Website('https://link-academy.com/');
+
+
         obj.greet();
         obj.incrementVisit();
         obj.incrementVisit();
+        obj.count = 5;
+        console.log(obj.count);
         console.log(obj.getCount());
 
         let p = new Page(obj.name, 'Contact');
         Page.vizitPage(p.page);
         Page.vizitPage(p.page);
         Page.vizitPage(p.page);
-        Page.topPage['HomePage']=4;
-        
+        Page.topPage['HomePage'] = 4;
+
         let p2 = new Page(obj.name, 'About');
         Page.vizitPage(p2.page);
         Page.vizitPage(p2.page);
@@ -79,7 +94,7 @@
         console.log(p2.info());
         console.log(p2.admin) // good practice we can access the protected member
         console.log(p2._admin) // this works, but this is not recommended as it violates encapsulation principles
-p2.admin='vizitator';
+        p2.admin = 'vizitator';
     </script>
 </body>
 

@@ -40,14 +40,14 @@
             }
         }
         class Actor extends Artist {
-            constructor(name, domain,) {
+            constructor(name, domain) {
                 super(name, domain);
 
             }
         }
 
         let singer = new Artist("Lady Gag", "Music");
-        console.log(singer);
+       // console.log(singer);
         let actor = new Actor('Will Smith', 'Movie');
 
         // 3.
@@ -58,7 +58,7 @@
         }
 
         let arr = new PowerArray(1, 2, 5, 10, 50);
-        console.log(arr.isEmpty()); // false
+        console.log(arr); // false
 
         let filteredArr = arr.filter(item => item >= 10);
         console.log(filteredArr); // 10, 50

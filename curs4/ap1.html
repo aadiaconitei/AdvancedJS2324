@@ -13,6 +13,8 @@
     <script>
         // Class Declaration
         class Artist {
+            name;
+            domain;
             constructor(name, domain) {
                 this.name = name;
                 this.domain = domain;
@@ -25,10 +27,10 @@
             }
         }
         let singer = new Artist("Lady Gag", "Music");
-        console.log(singer);
+        console.log(typeof singer);
 
         // Class Expression
-        const NewArtist  = class {
+        const NewArtist = class {
             constructor(name, domain) {
                 this.name = name;
                 this.domain = domain;
@@ -41,7 +43,7 @@
             }
         }
         let singer2 = new NewArtist("Dua Lipa", "Music");
-        console.log(singer2);
+        console.log(typeof singer2);
     </script>
 
 </body>
