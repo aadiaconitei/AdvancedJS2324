@@ -14,18 +14,14 @@
             constructor() {
                 this.observers = [];
             }
-
             subscribe(func) {
                 this.observers.push(func);
             }
-
             unsubscribe(func) {
                 this.observers = this.observers.filter(observer => observer !== func);
             }
-
             notify(data) {
                 this.observers.forEach(observer => observer(data));
-                
             }
             fire(o, thisObj) {
                 var scope = thisObj || window;
@@ -34,21 +30,18 @@
                 });
             }
         }
-        
+        var clickHandler = function (item) {
+            console.log("fired: " + item);
+        };
+        var click = new Observable();
 
-            var clickHandler = function (item) {
-                console.log("fired: " + item);
-            };
+        click.subscribe(clickHandler);
+        click.fire('event #1');
+        click.unsubscribe(clickHandler);
+        click.fire('event #2');
+        click.subscribe(clickHandler);
+        click.fire('event #3');
 
-            var click = new Observable();
-
-            click.subscribe(clickHandler);
-            click.fire('event #1');
-            click.unsubscribe(clickHandler);
-            click.fire('event #2');
-            click.subscribe(clickHandler);
-            click.fire('event #3');
-        
     </script>
 </body>
 

@@ -40,6 +40,7 @@
                 this._age = age;
             }
             get name() {
+                console.log('sunt in getter');
                 if (userType === "Admin") {
                     return this._name;
                 } else {
@@ -47,7 +48,7 @@
                 }
             }
         }
-        let userType = "Editor";
+        let userType = "Admin";
         const person = new User("Ion Popescu", 24);
         console.log(person.name);
     </script>
