@@ -18,10 +18,10 @@ const app = express();
 // Parses the body for POST, PUT, DELETE, etc.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.static(__dirname));
+app.use(express.static(__dirname));
 // GET
 app.get("/", (req, res) => res.send("Hello World!"));
-app.get("/blog", (req, res) => res.sendFile("blog.html"));
+app.get("/blog", (req, res) => res.sendfile("./blog.html"));
 // POST
 app.post("/", function (req, res) {
   console.log(req.body);

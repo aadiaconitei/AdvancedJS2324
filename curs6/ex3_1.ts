@@ -11,4 +11,5 @@ class StudentNou {
 }
 
 let studentnou: StudentNou = new StudentNou(1, "JoeRoot");
+// studentnou.studName = "Dragos"; //error
 console.log(studentnou.display());
